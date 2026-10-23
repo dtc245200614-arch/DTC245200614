@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>💰 Expense Tracker</h1></header>
+  <main>
+    <section class="cards">
+      <div class="card"><span>Thu nhập</span><b id="income">0</b></div>
+      <div class="card"><span>Chi tiêu</span><b id="expense">0</b></div>
+      <div class="card"><span>Số dư</span><b id="balance">0</b></div>
+    </section>
+
+    <section>
+      <h2>Thêm giao dịch</h2>
+      <form id="txForm">
+        <select id="txCategory" required></select>
+        <input id="txAmount" type="number" min="1" step="any" placeholder="Số tiền" required>
+        <input id="txNote" maxlength="200" placeholder="Ghi chú">
+        <input id="txDate" type="date" required>
+        <button>Thêm</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Danh mục</h2>
+      <form id="catForm">
+        <input id="catName" maxlength="50" placeholder="Tên danh mục" required>
+        <select id="catType"><option value="expense">Chi tiêu</option><option value="income">Thu nhập</option></select>
+        <button>Thêm danh mục</button>
+      </form>
+      <p id="catList" class="tags"></p>
+    </section>
+
+    <section>
+      <h2>Báo cáo theo danh mục</h2>
+      <div id="byCategory"></div>
+      <h2>Báo cáo theo tháng</h2>
+      <table><thead><tr><th>Tháng</th><th>Thu</th><th>Chi</th></tr></thead><tbody id="byMonth"></tbody></table>
+    </section>
+
+    <section>
+      <h2>Giao dịch gần đây</h2>
+      <table><thead><tr><th>Ngày</th><th>Danh mục</th><th>Ghi chú</th><th>Số tiền</th><th></th></tr></thead><tbody id="txList"></tbody></table>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
